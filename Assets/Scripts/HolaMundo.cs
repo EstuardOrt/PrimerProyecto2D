@@ -9,7 +9,7 @@ public class HolaMundo : MonoBehaviour
     [SerializeField] private string mensaje;
     void Start()
     {
-        Saludar();
+        //Saludar();
     }
 
     public void Saludar()

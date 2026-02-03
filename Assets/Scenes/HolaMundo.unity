@@ -129,7 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 34058445}
   - component: {fileID: 34058444}
-  - component: {fileID: 34058443}
+  - component: {fileID: 34058447}
+  - component: {fileID: 34058446}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -137,19 +138,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &34058443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 34058442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123e8c0bad896446992d70e32d5c9697, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HolaMundo
-  mensaje: Hola Mundo 2
 --- !u!212 &34058444
 SpriteRenderer:
   serializedVersion: 2
@@ -224,6 +212,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &34058446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34058442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449520d71661840a4b809386330cc15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControlCuadrado
+--- !u!114 &34058447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34058442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123e8c0bad896446992d70e32d5c9697, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HolaMundo
+  mensaje: Hola Mundo 2
 --- !u!1 &173799471
 GameObject:
   m_ObjectHideFlags: 0
