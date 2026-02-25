@@ -1071,11 +1071,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movimiento
   velocidadCaminata: 4
-  velInicialSalto: 7
   capaDeSalto:
     serializedVersion: 2
     m_Bits: 448
-  alturaSalto: 4
+  alturaSalto: 3.3
 --- !u!50 &1407757401
 Rigidbody2D:
   serializedVersion: 5

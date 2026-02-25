@@ -6,7 +6,7 @@ public class Movimiento : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private float velocidadCaminata = 4f;
-    [SerializeField] private float velInicialSalto = 24f;
+    private float velInicialSalto;
     [SerializeField] private LayerMask capaDeSalto;
     [SerializeField] private float alturaSalto = 4f;
 
@@ -16,6 +16,8 @@ public class Movimiento : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        float gravedadEfectiva = Mathf.Abs(Physics2D.gravity.y * rb.gravityScale);
+        velInicialSalto = Mathf.Sqrt(2f * gravedadEfectiva * alturaSalto);
     }
 
     public void Saltar(bool debeSaltar)
