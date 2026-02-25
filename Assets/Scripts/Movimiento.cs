@@ -37,6 +37,10 @@ public class Movimiento : MonoBehaviour
         animator.SetBool("estaCorriendo", movimientoX != 0);
     }
 
+    public void VoltearTransform(float movimientoX){
+    transform.localScale = new Vector2(Mathf.Sign(movimientoX) * Mathf.Abs(transform.localScale.x), transform.localScale.y);
+}
+
     // Update is called once per frame
     void Update()
     {
