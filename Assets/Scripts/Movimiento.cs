@@ -12,10 +12,12 @@ public class Movimiento : MonoBehaviour
 
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
+    private Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
+        animator = GetComponent<Animator>();
         float gravedadEfectiva = Mathf.Abs(Physics2D.gravity.y * rb.gravityScale);
         velInicialSalto = Mathf.Sqrt(2f * gravedadEfectiva * alturaSalto);
     }
@@ -32,6 +34,7 @@ public class Movimiento : MonoBehaviour
     public void Moverse(float movimientoX)
     {
         rb.linearVelocity = new Vector2(movimientoX*velocidadCaminata, rb.linearVelocity.y);
+        animator.SetBool("estaCorriendo", movimientoX != 0);
     }
 
     // Update is called once per frame
