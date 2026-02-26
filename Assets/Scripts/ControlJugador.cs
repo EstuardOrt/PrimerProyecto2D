@@ -29,6 +29,7 @@ public class ControlJugador : MonoBehaviour
 
     public void AlSaltar(InputAction.CallbackContext context)
     {
-        movimiento.Saltar(context.action.triggered);
+        if(context.performed){
+        movimiento.Saltar(true);}
     }
 }

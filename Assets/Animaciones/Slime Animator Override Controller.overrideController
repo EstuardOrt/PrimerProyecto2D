@@ -7,5 +7,9 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Slime Animator Override Controller
-  m_Controller: {fileID: 0}
-  m_Clips: []
+  m_Controller: {fileID: 9100000, guid: 6a7a5939822e9454baa9c0515c3fdd60, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3a783e3e4723f4c90890bc770cdbd681, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 76117cab4445e4fc6ad6221768567ac6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cb6f28c65089f4a4fa74fe90f399826f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c86c0cbdab80341099c9c4e9c205467f, type: 2}

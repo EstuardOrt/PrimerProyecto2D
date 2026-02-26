@@ -9,7 +9,9 @@ public class Movimiento : MonoBehaviour
     private float velInicialSalto;
     [SerializeField] private LayerMask capaDeSalto;
     [SerializeField] private float alturaSalto = 4f;
-
+    [SerializeField] private int saltosExtra = 2;
+    
+    private int saltosRestantes;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
     private Animator animator;
@@ -20,14 +22,15 @@ public class Movimiento : MonoBehaviour
         animator = GetComponent<Animator>();
         float gravedadEfectiva = Mathf.Abs(Physics2D.gravity.y * rb.gravityScale);
         velInicialSalto = Mathf.Sqrt(2f * gravedadEfectiva * alturaSalto);
+        saltosRestantes = saltosExtra;
     }
 
     public void Saltar(bool debeSaltar)
     {
-        if(!boxCollider.IsTouchingLayers(capaDeSalto)){return; }
-        if (debeSaltar)
+        if (debeSaltar && saltosRestantes>0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, velInicialSalto);
+            saltosRestantes--;
         }
     }
 
@@ -39,11 +42,27 @@ public class Movimiento : MonoBehaviour
 
     public void VoltearTransform(float movimientoX){
     transform.localScale = new Vector2(Mathf.Sign(movimientoX) * Mathf.Abs(transform.localScale.x), transform.localScale.y);
-}
+    }
+
+    private bool EstaEnSuelo(){
+    float distanciaDeteccion = 0.1f;
+    RaycastHit2D hit = Physics2D.BoxCast(
+        boxCollider.bounds.center, 
+        boxCollider.bounds.size, 
+        0f, 
+        Vector2.down, 
+        distanciaDeteccion, 
+        capaDeSalto
+    );
+    
+    return hit.collider != null;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (EstaEnSuelo()){
+            saltosRestantes = saltosExtra;
+        }
     }
 }
