@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 2687688996963326375}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.58, y: 0, z: 0}
+  m_LocalPosition: {x: 0.58, y: -0.153, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,6 +46,9 @@ GameObject:
   - component: {fileID: 9037949710962758072}
   - component: {fileID: 636146440469363089}
   - component: {fileID: 3945269710369762681}
+  - component: {fileID: -8350203962623569522}
+  - component: {fileID: -6639872242341640756}
+  - component: {fileID: 5710375801831912775}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Untagged
@@ -257,3 +260,51 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   alturaSalto: 1
+  saltosExtra: 2
+--- !u!114 &-8350203962623569522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995413616840082943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6997d8b4488064a368ae797470cead2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Salud
+  saludMax: 3
+  destruirAlMorir: 1
+  tiempoEnDestruirse: 0
+  alPerderSalud:
+    m_PersistentCalls:
+      m_Calls: []
+  alMorir:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-6639872242341640756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995413616840082943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05173574cedf5445bb907bb20461d100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Equipo
+  equipo: 0
+--- !u!114 &5710375801831912775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7995413616840082943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa9f651397754ed3acdebfa7e3b0276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContactoAtaque
+  cantAtaque: 1

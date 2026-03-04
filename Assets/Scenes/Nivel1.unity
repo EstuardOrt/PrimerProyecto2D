@@ -176,6 +176,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 2687688996963326375, guid: 37a69ebb1f998470580057306ff62f7d, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2687688996963326375, guid: 37a69ebb1f998470580057306ff62f7d, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
@@ -186,6 +190,10 @@ PrefabInstance:
     - target: {fileID: 7995413616840082943, guid: 37a69ebb1f998470580057306ff62f7d, type: 3}
       propertyPath: m_Name
       value: Slime
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995413616840082943, guid: 37a69ebb1f998470580057306ff62f7d, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2296,7 +2304,7 @@ GameObject:
   - component: {fileID: 1166437528}
   - component: {fileID: 1166437527}
   - component: {fileID: 1166437526}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Tilemap trampas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2643,7 +2651,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1166437524}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -2659,7 +2667,7 @@ Rigidbody2D:
     serializedVersion: 2
     m_Bits: 0
   m_Interpolate: 0
-  m_SleepingMode: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!19719996 &1166437528

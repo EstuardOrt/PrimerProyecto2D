@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 4406156770008702273}
   - component: {fileID: 5396348205755299335}
   - component: {fileID: 3741336805663380009}
+  - component: {fileID: -7192244013191428188}
+  - component: {fileID: 5507488905215361028}
+  - component: {fileID: -7642786165725703242}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -319,7 +322,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 448
   alturaSalto: 2
-  saltosExtra: 2
+  saltosExtra: 1
 --- !u!114 &3741336805663380009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,3 +335,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab815cbc8503745dea732447114288fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ControlJugador
+--- !u!114 &-7192244013191428188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592311197358498490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05173574cedf5445bb907bb20461d100, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Equipo
+  equipo: 1
+--- !u!114 &5507488905215361028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592311197358498490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6997d8b4488064a368ae797470cead2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Salud
+  saludMax: 3
+  destruirAlMorir: 1
+  tiempoEnDestruirse: 0
+  alPerderSalud:
+    m_PersistentCalls:
+      m_Calls: []
+  alMorir:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-7642786165725703242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592311197358498490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fa9f651397754ed3acdebfa7e3b0276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ContactoAtaque
+  cantAtaque: 3
