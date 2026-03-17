@@ -22,6 +22,8 @@ public class ControlJugador : MonoBehaviour
         if (Mathf. Abs(entradaControl.x) > Mathf.Epsilon){
             movimiento. VoltearTransform(entradaControl.x);
             }
+        
+        movimiento.Escalar(entradaControl.y);
     }
 
     public void AlMoverse(InputAction.CallbackContext context)
@@ -31,8 +33,7 @@ public class ControlJugador : MonoBehaviour
 
     public void AlSaltar(InputAction.CallbackContext context)
     {
-        if(context.performed){
-        movimiento.Saltar(true);}
+        movimiento.Saltar(context.ReadValueAsButton());
     }
 
     public void AlLanzar(InputAction.CallbackContext context)

@@ -6,11 +6,14 @@ public class Movimiento : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private float velocidadCaminata = 4f;
-    private float velInicialSalto;
+    [SerializeField] private float velocidadEscalar = 1f;
+    [Range(0,1)][SerializeField] private float modificadorVelSalto = 0.5f;
     [SerializeField] private LayerMask capaDeSalto;
     [SerializeField] private float alturaSalto = 4f;
     [SerializeField] private int saltosExtra = 2;
-    
+    [SerializeField] private LayerMask capaDeEscalera;
+
+    private float escalaGravedad = 1f;
     private int saltosRestantes;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
@@ -21,16 +24,22 @@ public class Movimiento : MonoBehaviour
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
         float gravedadEfectiva = Mathf.Abs(Physics2D.gravity.y * rb.gravityScale);
-        velInicialSalto = Mathf.Sqrt(2f * gravedadEfectiva * alturaSalto);
+        //velInicialSalto = Mathf.Sqrt(2f * gravedadEfectiva * alturaSalto);
         saltosRestantes = saltosExtra;
+        escalaGravedad = rb.gravityScale;
     }
 
     public void Saltar(bool debeSaltar)
     {
         if (debeSaltar && saltosRestantes>0)
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, velInicialSalto);
+            float velocidadSalto = Mathf.Sqrt(-2f * rb.gravityScale * Physics2D.gravity.y * alturaSalto);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, velocidadSalto);
             saltosRestantes--;
+        }
+        if (!debeSaltar && rb.linearVelocity.y > 0)
+        {
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * modificadorVelSalto);
         }
     }
 
@@ -56,6 +65,17 @@ public class Movimiento : MonoBehaviour
     );
     
     return hit.collider != null;
+    }
+
+    public void Escalar(float movimientoY)
+    {
+        if (!boxCollider.IsTouchingLayers(capaDeEscalera))
+        {
+         rb.gravityScale = escalaGravedad;
+         return;   
+        }
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, movimientoY* velocidadEscalar);
+        rb.gravityScale = 0f;
     }
 
     // Update is called once per frame
