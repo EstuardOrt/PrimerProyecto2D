@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 72445330293452420}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SalidaProyectil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,8 @@ GameObject:
   - component: {fileID: 5507488905215361028}
   - component: {fileID: -7642786165725703242}
   - component: {fileID: 3141616958413817600}
-  m_Layer: 0
+  - component: {fileID: -3562522467466131908}
+  m_Layer: 7
   m_Name: Jugador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,3 +447,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LanzaProyectil
   proyectilPrefab: {fileID: 2258861484992903239, guid: 43a5885cc3ad243a7975eb58da6ffdd5, type: 3}
   puntoDeSalida: {fileID: 72445330293452420}
+--- !u!114 &-3562522467466131908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7592311197358498490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42f613736d0a4fddb34962e0054ec28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Puntaje
+  puntosActuales: 0
+  onPuntajeCambiado:
+    m_PersistentCalls:
+      m_Calls: []
