@@ -3,6 +3,7 @@ using UnityEngine.Events;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class Salud : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Salud : MonoBehaviour
 
     [SerializeField] private float saludMax = 3f;
     [SerializeField] private bool destruirAlMorir = true;
+    [SerializeField] private bool esJugador = false;
     [SerializeField]private float tiempoEnDestruirse = 0f;
     [SerializeField] private UnityEvent<float> alPerderSalud;
     [SerializeField] private UnityEvent alMorir;
@@ -69,14 +71,30 @@ public class Salud : MonoBehaviour
         }
     }
 
+    public void GanarSalud(float cantidad)
+    {
+        if (estaMuerto) return;
+        
+        // Mathf.Min asegura que no sobrepases la salud máxima
+        saludActual = Mathf.Min(saludActual + cantidad, saludMax);
+        alActualizarSalud?.Invoke();
+
+    }
+
     private void Morir()
     {
         if (estaMuerto) return;
         alMorir?.Invoke();
         estaMuerto = true;
+        
         if (destruirAlMorir)
         {
-            Destroy(gameObject, tiempoEnDestruirse);
+            Destroy(gameObject, tiempoEnDestruirse);            
+        }
+        if (esJugador)
+        {
+            SceneManager.LoadScene("MenuPrincipal");
+            
         }
     }
 

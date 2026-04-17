@@ -6,6 +6,7 @@ public class Movimiento : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField] private float velocidadCaminata = 4f;
+    [SerializeField] private float multiplicadorCarrera = 2f;
     [SerializeField] private float velocidadEscalar = 1f;
     [Range(0,1)][SerializeField] private float modificadorVelSalto = 0.5f;
     [SerializeField] private LayerMask capaDeSalto;
@@ -43,9 +44,17 @@ public class Movimiento : MonoBehaviour
         }
     }
 
-    public void Moverse(float movimientoX)
+    public void Moverse(float movimientoX, bool esCorriendo = false)
     {
-        rb.linearVelocity = new Vector2(movimientoX*velocidadCaminata, rb.linearVelocity.y);
+        float velocidadFinal = esCorriendo ? velocidadCaminata * multiplicadorCarrera : velocidadCaminata;
+        rb.linearVelocity = new Vector2(movimientoX * velocidadFinal, rb.linearVelocity.y);
+        if (movimientoX != 0)
+        {
+        animator.speed = esCorriendo ? 1.5f : 1f;
+        } else
+        {
+        animator.speed = 1f;
+        }
         animator.SetBool("estaCorriendo", movimientoX != 0);
     }
 

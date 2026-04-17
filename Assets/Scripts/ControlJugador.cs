@@ -9,6 +9,7 @@ public class ControlJugador : MonoBehaviour
     private Movimiento movimiento;
     private Vector2 entradaControl;
     private LanzaProyectil lanzaProyectiles;
+    private bool quiereCorrer = false;
     void Start()
     {
         movimiento = GetComponent<Movimiento>();
@@ -18,7 +19,7 @@ public class ControlJugador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movimiento.Moverse(entradaControl.x);
+        movimiento.Moverse(entradaControl.x, quiereCorrer);
         if (Mathf. Abs(entradaControl.x) > Mathf.Epsilon){
             movimiento. VoltearTransform(entradaControl.x);
             }
@@ -29,6 +30,11 @@ public class ControlJugador : MonoBehaviour
     public void AlMoverse(InputAction.CallbackContext context)
     {
         entradaControl = context.ReadValue<Vector2>();
+    }
+    public void AlCorrer(InputAction.CallbackContext context)
+    {
+        if (context.started) quiereCorrer = true;
+        if (context.canceled) quiereCorrer = false;
     }
 
     public void AlSaltar(InputAction.CallbackContext context)
